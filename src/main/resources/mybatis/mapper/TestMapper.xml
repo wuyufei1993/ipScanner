@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wyf.ipScanner.mapper.TestMapper">
+	<select id="findByPage" resultType="com.wyf.ipScanner.entity.TestResult">
+		SELECT
+			id,
+			imei,
+			electric_quantity as electricQuantity,
+			lock1,
+			lock2,
+			lock3,
+			lock4,
+			door1,
+			door2,
+			door3,
+			door4,
+			test_result as testResult,
+			create_time as createTime
+		FROM
+			t_test_result
+	</select>
+</mapper>
