@@ -2,32 +2,57 @@ package com.wyf.ipScanner.entity;
 
 import java.util.Date;
 
-public class TestResult {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
+@Entity
+@Table(name = "t_test_result")
+public class TestResult {
+	
+	@Id
+	@GeneratedValue(generator = "uuid")
+	@GenericGenerator(name = "uuid", strategy = "uuid")
 	private String id;
 
+	@Column(name = "imei")
 	private String imei;
 
+	@Column(name = "electricQuantity")
 	private Integer electricQuantity;
 
+	@Column(name = "lock1")
 	private Integer lock1;
 
+	@Column(name = "lock2")
 	private Integer lock2;
 
+	@Column(name = "lock3")
 	private Integer lock3;
 
+	@Column(name = "lock4")
 	private Integer lock4;
 
+	@Column(name = "door1")
 	private Integer door1;
 
+	@Column(name = "door2")
 	private Integer door2;
 
+	@Column(name = "door3")
 	private Integer door3;
 
+	@Column(name = "door4")
 	private Integer door4;
-	
+
+	@Column(name = "test_result")
 	private Integer testResult;
-	
+
+	@Column(name = "create_time")
 	private Date createTime;
 
 	public String getId() {

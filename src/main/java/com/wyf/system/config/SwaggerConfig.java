@@ -1,4 +1,4 @@
-package com.wyf.ipScanner.config;
+package com.wyf.system.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

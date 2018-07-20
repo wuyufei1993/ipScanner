@@ -21,6 +21,10 @@ spring:
         test-while-idle: true
         test-on-borrow: false
         test-on-return: false
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    database: mysql
+    show-sql: true
 
 mybatis:
   mapper-locations: classpath:mybatis/mapper/**/*.xml

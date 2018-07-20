@@ -8,9 +8,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.wyf.ipScanner.dao.TestResultDao;
 import com.wyf.ipScanner.entity.Port;
 import com.wyf.ipScanner.entity.TestResult;
 import com.wyf.ipScanner.mapper.TestMapper;
+import com.wyf.ipScanner.service.TestResultService;
+import com.wyf.system.common.Page;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -22,6 +25,9 @@ public class TestController {
 
 	@Autowired
 	private TestMapper testMapper;
+	
+	@Autowired
+	private TestResultService testResultService;
 	
 	@ApiOperation("测试")
 	@GetMapping("/test/{name}")
@@ -41,6 +47,12 @@ public class TestController {
 	public PageInfo<TestResult> testPage(int pageNo, int pageSize) {
 		PageHelper.startPage(pageNo, pageSize);
 		return testMapper.findByPage().toPageInfo();
+	}
+	
+	@ApiOperation("测试hibernate")
+	@GetMapping(value = "/testHibernate")
+	public Object testHibernate(Page page) {
+		return testResultService.findPageList(null, page);
 	}
 	
 }
