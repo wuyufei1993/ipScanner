@@ -1,4 +1,4 @@
-package com.wyf.ipScanner.dao;
+package com.wyf.system.jpa;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;

@@ -5,18 +5,19 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-
-import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name = "t_test_result")
 public class TestResult {
 	
 	@Id
-	@GeneratedValue(generator = "uuid")
-	@GenericGenerator(name = "uuid", strategy = "uuid")
+	@Column(name = "id")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
+	@SequenceGenerator(name = "id_seq", sequenceName="metadata_seq",allocationSize=1)
 	private String id;
 
 	@Column(name = "imei")

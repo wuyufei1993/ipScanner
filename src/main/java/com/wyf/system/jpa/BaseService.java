@@ -1,4 +1,4 @@
-package com.wyf.ipScanner.service;
+package com.wyf.system.jpa;
 
 import java.io.Serializable;
 import java.util.Arrays;
@@ -8,8 +8,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
-
-import com.wyf.ipScanner.dao.BaseDao;
 
 public interface BaseService<T, ID extends Serializable> {
 	
@@ -30,7 +28,7 @@ public interface BaseService<T, ID extends Serializable> {
 	 * 
 	 * @return
 	 */
-	public default List<T> findList() {
+	public default List<T> findAll() {
 		return getDao().findAll();
 	}
 
@@ -41,8 +39,18 @@ public interface BaseService<T, ID extends Serializable> {
 	 * @return
 	 */
 	public default List<T> findListByIds(ID[] ids) {
-		List<ID> idList = Arrays.asList(ids);
-		return getDao().findAllById(idList);
+		return getDao().findAllById(Arrays.asList(ids));
+	}
+
+	/**
+	 * 分页查询
+	 * 
+	 * @param spec
+	 * @param pageable
+	 * @return
+	 */
+	public default Page<T> findPageList(Pageable pageable) {
+		return getDao().findAll(pageable);
 	}
 
 	/**
@@ -53,11 +61,7 @@ public interface BaseService<T, ID extends Serializable> {
 	 * @return
 	 */
 	public default Page<T> findPageList(Specification<T> spec, Pageable pageable) {
-		if (spec == null) {
-			return getDao().findAll(pageable);
-		} else {
-			return getDao().findAll(spec, pageable);
-		}
+		return spec == null ? getDao().findAll(pageable) : getDao().findAll(spec, pageable);
 	}
 
 	/**
