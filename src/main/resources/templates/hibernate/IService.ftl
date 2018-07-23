@@ -1,12 +1,12 @@
-package ${package_name}.service;
+package ${packageName}.service;
 
-import ${package_name}.model.${table_name};
+import ${packageName}.model.${table.className};
 
 /**
-* 描述：${table_annotation}DTO
+* 描述：${tableAnnotation}
 * @author ${author}
 * @date ${date}
 */
-public interface I${table_name}Service extends BaseService<${table_name}, ${pk_class}>{
+public interface ${table.className}Service extends BaseService<${table.className}, ${table.pk.javaType}>{
 	
 }

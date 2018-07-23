@@ -1,9 +1,9 @@
-package ${package_name}.service.impl;
+package ${packageName}.service.impl;
 
-import ${package_name}.model.${table_name};
-import ${package_name}.dao.${table_name}DAO;
-import ${package_name}.dao.BaseDao;
-import ${package_name}.service.I${table_name}Service;
+import ${packageName}.model.${table.className};
+import ${packageName}.dao.${table.className}DAO;
+import ${packageName}.dao.BaseDao;
+import ${packageName}.service.I${table.className}Service;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -13,14 +13,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 * @date ${date}
 */
 @Service
-public class ${table_name}ServiceImpl implements I${table_name}Service{
+public class ${table.className}ServiceImpl implements I${table.className}Service{
 	
 	@Autowired
-	private ${table_name}DAO ${table_name?uncap_first}DAO;
+	private ${table.className}DAO ${table.className?uncap_first}DAO;
 	
 	@Override
-	public BaseDao<${table_name}, String> getDao() {
-		return ${table_name?uncap_first}DAO;
+	public BaseDao<${table.className}, String> getDao() {
+		return ${table.className?uncap_first}DAO;
 	}
 
 }

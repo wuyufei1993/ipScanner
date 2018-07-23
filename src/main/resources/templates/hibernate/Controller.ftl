@@ -1,7 +1,7 @@
-package ${package_name}.controller;
+package ${packageName}.controller;
 
-import ${package_name}.model.${table_name};
-import ${package_name}.service.I${table_name}Service;
+import ${packageName}.model.${table.className};
+import ${packageName}.service.${table.className}Service;
 import org.springframework.stereotype.Controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -18,43 +18,43 @@ import java.util.List;
 */
 
 @Controller
-@RequestMapping("/${table_name}")
-public class ${table_name}Controller {
+@RequestMapping("/${table.className}")
+public class ${table.className}Controller {
 
 	@Autowired
-	private I${table_name}Service ${table_name?uncap_first}Service;
+	private I${table.className}Service ${table.className?uncap_first}Service;
 	
 	@RequestMapping("/findById")
 	@ResponseBody
-	public ${table_name} findById(String id) {
-		return ${table_name?uncap_first}Service.findById(id);
+	public ${table.className} findById(String id) {
+		return ${table.className?uncap_first}Service.findById(id);
 	}
 	
 	@RequestMapping("/findAll")
 	@ResponseBody
-	public List<${table_name}> findAll() {
-		return ${table_name?uncap_first}Service.findAll();
+	public List<${table.className}> findAll() {
+		return ${table.className?uncap_first}Service.findAll();
 	}
 	
 	@RequestMapping("/findByPage")
 	@ResponseBody
-	public Page<${table_name}> findByPage(int page, int size) {
-		return ${table_name?uncap_first}Service.findPageList(PageRequest.of(page, size));
+	public Page<${table.className}> findByPage(int page, int size) {
+		return ${table.className?uncap_first}Service.findPageList(PageRequest.of(page, size));
 	}
 	
 	@RequestMapping("/create")
-	public void create(${table_name} ${table_name?uncap_first}) {
-		${table_name?uncap_first}Service.save(${table_name?uncap_first});
+	public void create(${table.className} ${table.className?uncap_first}) {
+		${table.className?uncap_first}Service.save(${table.className?uncap_first});
 	}
 	
 	@RequestMapping("/delete")
 	public void delete(String id){
-		${table_name?uncap_first}Service.deleteById(id);
+		${table.className?uncap_first}Service.deleteById(id);
 	}
 	
 	@RequestMapping("/update")
-	public void update(${table_name} ${table_name?uncap_first}){
-		${table_name?uncap_first}Service.save(${table_name?uncap_first});
+	public void update(${table.className} ${table.className?uncap_first}){
+		${table.className?uncap_first}Service.save(${table.className?uncap_first});
 	}
 
 }

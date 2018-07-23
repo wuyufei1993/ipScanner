@@ -1,4 +1,4 @@
-package ${package_name}.service;
+package ${packageName}.service;
 
 import java.io.Serializable;
 import java.util.Arrays;
@@ -9,7 +9,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 
-import ${package_name}.dao.BaseDao;
+import ${packageName}.dao.BaseDao;
 
 
 /**

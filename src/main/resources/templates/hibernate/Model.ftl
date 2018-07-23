@@ -1,9 +1,7 @@
-package ${package_name}.model;
+package ${packageName}.model;
 
-<#if importList?exists>
-	<#list importList as import>
-		${import};
-	</#list>	
+<#if table.isExistDate>
+	import java.util.Date;
 </#if>
 
 import javax.persistence.Column;
@@ -12,16 +10,16 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
-* 描述：${table_annotation}模型
+* 描述：${tableAnnotation}模型
 * @author ${author}
 * @date ${date}
 */
 @Entity
-@Table(name = "${table_name_small}")
-public class ${table_name} {
+@Table(name = "${table.tableName}")
+public class ${table.className} {
 
-<#if model_column?exists>
-   <#list model_column as model>
+<#if table.colums?exists>
+   <#list table.colums as model>
    		
 	    /**
 	    *${model.columnComment!}
