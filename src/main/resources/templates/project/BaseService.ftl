@@ -1,4 +1,4 @@
-package ${packageName}.service;
+package ${group}.system.jpa;
 
 import java.io.Serializable;
 import java.util.Arrays;
@@ -9,14 +9,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 
-import ${packageName}.dao.BaseDao;
-
-
-/**
-* 描述：BaseService
-* @author ${author}
-* @date ${date}
-*/
 public interface BaseService<T, ID extends Serializable> {
 	
 	public BaseDao<T, ID> getDao();

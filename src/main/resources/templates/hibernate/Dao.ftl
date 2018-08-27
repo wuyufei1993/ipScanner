@@ -1,14 +1,15 @@
-package ${packageName}.dao;
+package ${package_name}.dao;
 
-import ${packageName}.model.${table_name};
+import ${package_name}.model.${table_name};
 import org.springframework.stereotype.Repository;
+import ${package_name}.system.jpa.BaseDao;
 
 /**
-* 描述：${tableAnnotation}DTO
+* 描述：${table_annotation}DTO
 * @author ${author}
 * @date ${date}
 */
 @Repository
-public interface ${table.className}DAO extends BaseDao<${table.className}, ${table.pk.javaType}> {
+public interface ${table_name}DAO extends BaseDao<${table_name}, ${pk_class}> {
 
 }
