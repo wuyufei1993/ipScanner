@@ -11,7 +11,7 @@ import org.springframework.util.StringUtils;
 import com.wyf.system.generator.database.DatabaseParser;
 import com.wyf.system.generator.database.DatabaseTypes;
 import com.wyf.system.generator.database.MysqlParser;
-import com.wyf.system.generator.entity.FreemarkModel;
+import com.wyf.system.generator.entity.FreemarkerModel;
 import com.wyf.system.generator.entity.GeneratorParam;
 import com.wyf.system.utils.CodeGeneratorUtils;
 import com.wyf.system.utils.FileZip;
@@ -38,7 +38,7 @@ public abstract class CodeGenerator {
     
     private DatabaseParser databaseParser;
     
-    private FreemarkModel model;
+    private FreemarkerModel model;
 
 	public CodeGenerator(GeneratorParam generatorParam) throws Exception {
 		if (!StringUtils.isEmpty(generatorParam.getAuthor())) {

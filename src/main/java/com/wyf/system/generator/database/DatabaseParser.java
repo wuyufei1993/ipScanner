@@ -9,7 +9,7 @@ import java.util.List;
 
 import com.wyf.system.generator.entity.DatabaseColumn;
 import com.wyf.system.generator.entity.DatabaseTable;
-import com.wyf.system.generator.entity.FreemarkModel;
+import com.wyf.system.generator.entity.FreemarkerModel;
 
 public abstract class DatabaseParser {
 
@@ -34,7 +34,7 @@ public abstract class DatabaseParser {
         return connection;
     }
 	
-	public FreemarkModel parse(String tableName) throws Exception {
+	public FreemarkerModel parse(String tableName) throws Exception {
 		try (Connection connection = getConnection()) {
 			String [] pks = getPrimaryKey(connection, tableName);
 			if(connection.isClosed()) {
@@ -52,7 +52,7 @@ public abstract class DatabaseParser {
 				}
 				
 			}
-			return new FreemarkModel(table);
+			return new FreemarkerModel(table);
 		}
 		
 	}

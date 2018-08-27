@@ -1,6 +1,6 @@
 package com.wyf.system.generator.entity;
 
-public class FreemarkModel {
+public class FreemarkerModel {
 	
 	private String author;
 	
@@ -12,11 +12,11 @@ public class FreemarkModel {
 	
 	private DatabaseTable table;
 	
-	public FreemarkModel() {
+	public FreemarkerModel() {
 		
 	}
 
-	public FreemarkModel(DatabaseTable table) {
+	public FreemarkerModel(DatabaseTable table) {
 		this.table = table;
 	}
 
